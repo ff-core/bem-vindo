@@ -354,7 +354,81 @@ public function FilmeAtores(){
 ```
 ## Uso da Classe Controlador
 
-### Instâcia
+### Uso do Objeto Controlador
+
+```
+$Ct = new Controlador($this);
+```
+
+#### Propriedades
+
+As propritedas são obrigatórios para realizarem as configuração de tela e banco de dados.
+
+```
+$Ct->tabela;
+$Ct->nome;
+$Ct->titulo;
+```
+#### Funções
+
+1. displayAsGride
+      - Tem como objetivo configurar as colunas da Gride. Através do array associativo é informado o nome do campo da tabela e o nome de exibição na Gride.
+```
+$Ct->displayAsGride(array);
+```
+
+2. displayAsAdd
+      - Tem como objetico configurar as colunas no formulário de adição. Através do array associativo é informado o nome do campo da tabela e o nome de exibição na label.
+      - Se não informado esta função não é apresentado também seu respctivo botão de adicionar.
+```
+$Ct->displayAsAdd(array);
+```
+
+3. displayAsEdit
+      - Tem como objetico configurar as colunas no formulário de edição. Através do array associativo é informado o nome do campo da tabela e o nome de exibição na label.
+      - Se não informado esta função não é apresentado também seu respctivo botão de editar na gride na coluna de Ação.
+```
+$Ct->displayAsEdit(array);
+```
+
+4. displayAsView
+      - Tem como objetico configurar as colunas no formulário de visualização. Através do array associativo é informado o nome do campo da tabela e o nome de exibição na label.
+      - Se não informado esta função não é apresentado também seu respctivo botão de visualizar na gride na coluna de Ação.
+```
+$Ct->displayAsView(array);
+```
+
+5. displayAsDelete
+      - Tem como objetico configurar as colunas no formulário de deleção. 
+      - Se não informado esta função ou passado o parametro False não é apresentado também seu respctivo botão de deletar na gride na coluna de Ação.
+      - O delete é feito atrávez da chave primária.
+```
+$Ct->displayAsView(bool True|False);
+```
+
+6. addReferencesKey
+      - O objetivo é onde existir a referencia será apresentado a ligação com a Coluna de Exibição da Tabela Referenciada. E onde é formulário trazer linhas desta tabela Referenciada.
+```
+$Ct->addReferencesKey(Coluna Referencia, Tabela Referenciada, Coluna PK Referenciada, Coluna de Exibição Referenciada, Where = []);
+```
+
+7.fieldNameDefaultValue
+      - É utilizada para deixar em seus formulários o campo com um valor default. Através do array associativo é informado o nome do campo e o valor default.
+```
+$Ct->fieldNameDefaultValue(array);
+```
+
+8.where
+      - É utilizada para criar alguma condição no filtro da Gride. Através do array associativo é informado o nome do campo e o valor do filtro.
+```
+$Ct->where(array);
+```
+
+9.show
+      - É através desta função que renderizado toda a configuração e coloca em HTML para ser manda na view Cadastro que esta recepcionando.
+```
+return $Ct->show();
+```
 
 ### Duvidas ou Contato
 
