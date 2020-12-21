@@ -412,19 +412,19 @@ $Ct->displayAsView(bool True|False);
 $Ct->addReferencesKey(Coluna Referencia, Tabela Referenciada, Coluna PK Referenciada, Coluna de Exibição Referenciada, Where = []);
 ```
 
-7.fieldNameDefaultValue
+7. fieldNameDefaultValue
       - É utilizada para deixar em seus formulários o campo com um valor default. Através do array associativo é informado o nome do campo e o valor default.
 ```
 $Ct->fieldNameDefaultValue(array);
 ```
 
-8.where
+8. where
       - É utilizada para criar alguma condição no filtro da Gride. Através do array associativo é informado o nome do campo e o valor do filtro.
 ```
 $Ct->where(array);
 ```
 
-9.show
+9. show
       - É através desta função que renderizado toda a configuração e coloca em HTML para ser manda na view Cadastro que esta recepcionando.
 ```
 return $Ct->show();
