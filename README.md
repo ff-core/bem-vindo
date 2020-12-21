@@ -16,7 +16,7 @@ Suporte ao Banco de Dados Mysql.
 
 ## Projeto completo ff-Core
 
-Você pode baixar o projeto completo para ser testador. [Baixe aqui](https://github.com/ff-core/bem-vindo/edit/main/README.md)
+Você pode baixar o projeto completo para ser testador. [Baixe aqui](https://github.com/ff-core/codeigniter4)
 
 A Database se encontra na pasta raiz do projeto para ser importada. `db-exemples.sql`.
 
@@ -41,9 +41,9 @@ http://codeigniter.com/download
 
 ### Biblioteca
 
-Clone o projeto [ff-core-biblioteca](link do ffcore)
+Clone o projeto [ff-core](https://github.com/ff-core/ff-core.git)
 
-Copie a estrutura de pasta para dentro do projeto CodeIgniter ffCoreCrud
+Copie a estrutura de pasta para dentro do projeto CodeIgniter ffCoreCrud (Nome do Projeto criado via composer)
 
 As estruruta de pasta sao idênticas para para este proposita em facilitar a copia dos arquivo ff-core-biblioteca para dentro do projeto CodeIgniter.
 
