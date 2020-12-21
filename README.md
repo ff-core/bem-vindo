@@ -123,6 +123,7 @@ CREATE TABLE `empregados` (
 ```
 
 Código Fonte
+
 ```codigofonte
 public function Escritorios()
 {	
@@ -210,6 +211,8 @@ public function Funcionarios($id){
 ```
 ### N-N
 
+Tabela
+
 ```nn
 CREATE TABLE `atores` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -244,6 +247,8 @@ CREATE TABLE `filme_atores` (
   CONSTRAINT `FK_FILME` FOREIGN KEY (`id_filme`) REFERENCES `filme` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
+
+Código Fonte
 
 ```codigofonte
 public function Filmes(){
@@ -352,6 +357,9 @@ public function FilmeAtores(){
   return $Ct->show();
 }
 ```
+
+      - Observação: As funções devem serem colocar dentro da classe controller conforme a documentação do Codeigniter.
+      
 ## Uso da Classe Controlador
 
 ### Uso do Objeto Controlador
