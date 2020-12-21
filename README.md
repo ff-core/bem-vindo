@@ -1,4 +1,27 @@
-## Welcome to GitHub Pages
+# Bem vindo ao ff-Core
+
+A **ff-core** é um biblioteca de **código aberto** que facilita a vida e aumenta a performance do desenvolvedor. Com poucas linhas e simples de codifica-las você cria um CRUD completo e estável.
+
+## Objetivo da ff-Core
+
+Nosso objetivo é criar componentes para os desenvolvedores criarem softwares de alta performance com agilidade para seus clientes.
+
+## Requisitos do ff-Core
+
+A **ff-core** é uma biblioteca em PHP utilizando do Framework Codeigniter 4.0.4, Bootstrap 5.0.0 e Javascript.
+Esta biblioteca não é aplicavel a outros Frameworks e outras versões anteriores do Codeigniter.
+
+Suporte ao Banco de Dados  Mysql
+
+### Projeto completo ff-Core
+
+Você pode baixar o projeto completo para ser testador. [Baixe aqui] (https://github.com/ff-core/bem-vindo/edit/main/README.md)
+
+A Database se encontra na pasta raiz do projeto para ser importada. Database: db-exemples.sql.
+
+É importante configurar o arquivo .env com a conexão da base de dados.
+
+### Instalação e Configuração da biblioteca ff-Core
 
 You can use the [editor on GitHub](https://github.com/ff-core/bem-vindo/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
