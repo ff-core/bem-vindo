@@ -88,6 +88,14 @@ Na raíz do projeto encontra-se o script com alguns teste realizado. Nome do arq
 
 2. Excute os scripts
 
+No desenvolvimento das tabelas é importante se atentar aos seguintes campos:
+```
+-created_at
+-updated_at
+-deleted_at
+```
+Este campos sao obrigatório sua criação para o comportamento da biblioteca funcionar.
+
 ## Exemplos
 
 ### 1-N
@@ -358,7 +366,7 @@ public function FilmeAtores(){
 }
 ```
 
-      - Observação: As funções devem serem colocar dentro da classe controller conforme a documentação do Codeigniter.
+- Observação: As funções devem serem colocar dentro da classe controller conforme a documentação do Codeigniter.
       
 ## Uso da Classe Controlador
 
