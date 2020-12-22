@@ -6,6 +6,10 @@ A **ff-core** é um biblioteca de **código aberto** que facilita a vida e aumen
 
 Nosso objetivo é criar componentes para os desenvolvedores criarem softwares de alta performance com agilidade para seus clientes.
 
+## Exemplo ao vivo
+
+Veja o funcionamento do componente ao vivo. [Click aqui!](https://matheusmello.info/live/public/Exemples/Escritorios)
+
 ## Requisitos do ff-Core
 
 A **ff-core** é uma biblioteca em PHP 7.4 utilizando do Framework Codeigniter 4.0.4, Bootstrap 5.0.0 e Javascript.
