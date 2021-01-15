@@ -6,6 +6,10 @@ A **ff-core** é um biblioteca de **código aberto** que facilita a vida e aumen
 
 Nosso objetivo é criar componentes para os desenvolvedores criarem softwares de alta performance com agilidade para seus clientes.
 
+## Exemplo ao vivo
+
+Veja o funcionamento do componente ao vivo. [Click aqui!](https://matheusmello.info/live/public/Exemples/Escritorios)
+
 ## Requisitos do ff-Core
 
 A **ff-core** é uma biblioteca em PHP 7.4 utilizando do Framework Codeigniter 4.0.4, Bootstrap 5.0.0 e Javascript.
@@ -16,7 +20,7 @@ Suporte ao Banco de Dados Mysql.
 
 ## Projeto completo ff-Core
 
-Você pode baixar o projeto completo para ser testador. [Baixe aqui](https://github.com/ff-core/bem-vindo/edit/main/README.md)
+Você pode baixar o projeto completo para ser testador. [Baixe aqui](https://github.com/ff-core/codeigniter4)
 
 A Database se encontra na pasta raiz do projeto para ser importada. `db-exemples.sql`.
 
@@ -41,9 +45,9 @@ http://codeigniter.com/download
 
 ### Biblioteca
 
-Clone o projeto [ff-core-biblioteca](link do ffcore)
+Clone o projeto [ff-core](https://github.com/ff-core/ff-core.git)
 
-Copie a estrutura de pasta para dentro do projeto CodeIgniter ffCoreCrud
+Copie a estrutura de pasta para dentro do projeto CodeIgniter ffCoreCrud (Nome do Projeto criado via composer)
 
 As estruruta de pasta sao idênticas para para este proposita em facilitar a copia dos arquivo ff-core-biblioteca para dentro do projeto CodeIgniter.
 
@@ -88,6 +92,14 @@ Na raíz do projeto encontra-se o script com alguns teste realizado. Nome do arq
 
 2. Excute os scripts
 
+No desenvolvimento das tabelas é importante se atentar aos seguintes campos:
+```
+-created_at
+-updated_at
+-deleted_at
+```
+Este campos sao obrigatório sua criação para o comportamento da biblioteca funcionar.
+
 ## Exemplos
 
 ### 1-N
@@ -123,6 +135,7 @@ CREATE TABLE `empregados` (
 ```
 
 Código Fonte
+
 ```codigofonte
 public function Escritorios()
 {	
@@ -210,6 +223,8 @@ public function Funcionarios($id){
 ```
 ### N-N
 
+Tabela
+
 ```nn
 CREATE TABLE `atores` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -244,6 +259,8 @@ CREATE TABLE `filme_atores` (
   CONSTRAINT `FK_FILME` FOREIGN KEY (`id_filme`) REFERENCES `filme` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
+
+Código Fonte
 
 ```codigofonte
 public function Filmes(){
@@ -352,6 +369,9 @@ public function FilmeAtores(){
   return $Ct->show();
 }
 ```
+
+- Observação: As funções devem serem colocar dentro da classe controller conforme a documentação do Codeigniter.
+      
 ## Uso da Classe Controlador
 
 ### Uso do Objeto Controlador
@@ -412,19 +432,19 @@ $Ct->displayAsView(bool True|False);
 $Ct->addReferencesKey(Coluna Referencia, Tabela Referenciada, Coluna PK Referenciada, Coluna de Exibição Referenciada, Where = []);
 ```
 
-7.fieldNameDefaultValue
+7. fieldNameDefaultValue
       - É utilizada para deixar em seus formulários o campo com um valor default. Através do array associativo é informado o nome do campo e o valor default.
 ```
 $Ct->fieldNameDefaultValue(array);
 ```
 
-8.where
+8. where
       - É utilizada para criar alguma condição no filtro da Gride. Através do array associativo é informado o nome do campo e o valor do filtro.
 ```
 $Ct->where(array);
 ```
 
-9.show
+9. show
       - É através desta função que renderizado toda a configuração e coloca em HTML para ser manda na view Cadastro que esta recepcionando.
 ```
 return $Ct->show();
@@ -439,3 +459,5 @@ E-mail: ffcore.contato@gmail.com
 E-mail: matheusnarciso@hotmail.com
 
 Skype: matheusmell0
+
+Sobre mim: [matheusmello.info](https://matheusmello.info)
