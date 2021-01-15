@@ -372,6 +372,119 @@ public function FilmeAtores(){
 
 - Observação: As funções devem serem colocar dentro da classe controller conforme a documentação do Codeigniter.
       
+## Exemplos de Callback
+
+### Eventos de Insert, Update e Delete
+
+Os eventos de Insert, Update e Delete ganharam os eventos de callback para befere e after Insert, Update e Delete. Abaixo segue o exemplo de sua utilização.
+
+```
+public function Escritorios()
+{	
+      $Ct = new Controlador($this);
+      $Ct->tabela = 'escritorios';
+      $Ct->nome = 'Escritórios';
+      $Ct->titulo = 'Cadastrar de Escritórios';
+
+      $Ct->displayAsFiltro([
+            'cidade' => 'Cidade'
+      ]);
+      $Ct->displayAsGride([
+            'id' => 'Id', 
+            'cidade' => 'Cidade', 
+            'telefone' => 'Telefone', 
+            'endereco' => 'Endereço'
+      ]);
+      $Ct->displayAsAdd([
+            'id' => 'Id', 
+            'cidade' => 'Cidade', 
+            'telefone' => 'Telefone', 
+            'endereco' => 'Endereço'
+      ]);
+      $Ct->displayAsEdit([
+            'id' => 'Id', 
+            'cidade' => 'Cidade', 
+            'telefone' => 'Telefone', 
+            'endereco' => 'Endereço'
+      ]);
+      $Ct->displayAsView([
+            'id' => 'Id', 
+            'cidade' => 'Cidade', 
+            'telefone' => 'Telefone', 
+            'endereco' => 'Endereço'
+      ]);
+      $Ct->displayAsDelete(true);
+
+      $Ct->displayAsLink([
+            '/Exemples/Funcionarios' => 'Funcionários'
+      ]);
+
+      $Ct->callbackBeforeInsert(array($this, 'beforeInsertEscritorio'));
+      $Ct->callbackBeforeUpdate(array($this, 'beforeUpdateEscritorio'));
+      $Ct->callbackAfterInsert(array($this, 'logInsertAfterEscritorio'));
+      $Ct->callbackAfterUpdate(array($this, 'logUpdateAfterEscritorio'));
+      $Ct->callbackAfterDelete(array($this, 'logDeleteAfterEscritorio'));
+
+      return $Ct->show();
+}
+
+public function beforeInsertEscritorio($post_array){
+      $post_array['cidade'] = strtoupper($post_array['cidade']);
+      return $post_array;
+}
+
+public function beforeUpdateEscritorio($post_array){
+      $post_array['cidade'] = strtoupper($post_array['cidade']);
+      return $post_array;
+}
+
+public function logInsertAfterEscritorio($post_array, $primarykey){
+      $this->db = \Config\Database::connect();
+
+      $values = print_r($post_array, true);
+      $data = [
+            'tabela' => 'escritorios',
+            'evento' => 'insert',
+            'values' => $values,
+            'chave' => $primarykey
+      ];
+
+      $this->db->table('log')->insert($data);
+
+      return true;
+}
+
+public function logUpdateAfterEscritorio($post_array, $primarykey){
+      $this->db = \Config\Database::connect();
+
+      $values = print_r($post_array, true);
+      $data = [
+            'tabela' => 'escritorios',
+            'evento' => 'update',
+            'values' => $values,
+            'chave' => $primarykey
+      ];
+
+      $this->db->table('log')->insert($data);
+
+      return true;
+}
+
+public function logDeleteAfterEscritorio($primarykey){
+      $this->db = \Config\Database::connect();
+
+      $data = [
+            'tabela' => 'escritorios',
+            'evento' => 'delete',
+            'chave' => $primarykey
+      ];
+
+      $this->db->table('log')->insert($data);
+
+      return true;
+}
+```
+
 ## Uso da Classe Controlador
 
 ### Uso do Objeto Controlador
